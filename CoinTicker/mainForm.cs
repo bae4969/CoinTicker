@@ -251,9 +251,7 @@ namespace CoinTicker
         }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to close?", "Confirm Delete!!", MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-                Close();
+            Close();
         }
 
 
