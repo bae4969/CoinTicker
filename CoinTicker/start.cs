@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Forms;
 
 namespace CoinTicker
 {
@@ -15,7 +17,8 @@ namespace CoinTicker
                 return;
             }
 
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainForm());
         }
     }

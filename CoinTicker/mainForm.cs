@@ -1,8 +1,11 @@
 using Newtonsoft.Json.Linq;
-using System.Data;
 using System.Diagnostics;
 using UpbitDealer.src;
-using System.Windows;
+using System.Threading;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Drawing;
+using System;
 
 namespace CoinTicker
 {

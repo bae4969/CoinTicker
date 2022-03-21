@@ -1,17 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net;
-using System.Security.Cryptography;
-using System.Text;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Data;
 using System.Collections.Generic;
-using JWT.Algorithms;
-using JWT;
-using JWT.Serializers;
-using System.Windows.Forms;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace UpbitDealer.src
 {

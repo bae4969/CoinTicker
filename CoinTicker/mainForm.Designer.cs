@@ -1,4 +1,6 @@
-﻿namespace CoinTicker
+﻿using System.Windows.Forms;
+
+namespace CoinTicker
 {
     partial class mainForm
     {
