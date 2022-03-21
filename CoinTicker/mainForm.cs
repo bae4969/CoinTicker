@@ -135,14 +135,6 @@ namespace CoinTicker
             lock (lock_tickerUpdater)
                 for (int i = 0; i < updateNameList.Count; i++)
                     textValue[i].Text = tickerData[updateNameList[i]].close;
-
-            if (!leftMenu.Visible)
-            {
-                TopMost = true;
-                Focus();
-                BringToFront();
-                TopMost = false;
-            }
         }
 
 

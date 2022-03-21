@@ -68,21 +68,21 @@ namespace CoinTicker
             this.opacityToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.leftMenu.Name = "leftMenu";
-            this.leftMenu.Size = new System.Drawing.Size(181, 114);
+            this.leftMenu.Size = new System.Drawing.Size(121, 92);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.leftMenuAddCombo});
-            this.addToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // leftMenuAddCombo
             // 
             this.leftMenuAddCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.leftMenuAddCombo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.leftMenuAddCombo.Font = new System.Drawing.Font("Arial", 9F);
             this.leftMenuAddCombo.Name = "leftMenuAddCombo";
             this.leftMenuAddCombo.Size = new System.Drawing.Size(75, 23);
             this.leftMenuAddCombo.Sorted = true;
@@ -92,16 +92,16 @@ namespace CoinTicker
             // 
             this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.leftMenuRemoveCombo});
-            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.deleteToolStripMenuItem.Text = "Remove";
             // 
             // leftMenuRemoveCombo
             // 
             this.leftMenuRemoveCombo.BackColor = System.Drawing.SystemColors.Window;
             this.leftMenuRemoveCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.leftMenuRemoveCombo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.leftMenuRemoveCombo.Font = new System.Drawing.Font("Arial", 9F);
             this.leftMenuRemoveCombo.ForeColor = System.Drawing.Color.Black;
             this.leftMenuRemoveCombo.Name = "leftMenuRemoveCombo";
             this.leftMenuRemoveCombo.Size = new System.Drawing.Size(75, 23);
@@ -112,15 +112,15 @@ namespace CoinTicker
             // 
             this.opacityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.leftMenuOpacityCombo});
-            this.opacityToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.opacityToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.opacityToolStripMenuItem.Name = "opacityToolStripMenuItem";
-            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.opacityToolStripMenuItem.Text = "Opacity";
             // 
             // leftMenuOpacityCombo
             // 
             this.leftMenuOpacityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.leftMenuOpacityCombo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.leftMenuOpacityCombo.Font = new System.Drawing.Font("Arial", 9F);
             this.leftMenuOpacityCombo.Items.AddRange(new object[] {
             "100",
             "90",
@@ -139,9 +139,9 @@ namespace CoinTicker
             // 
             // closeToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -161,7 +161,7 @@ namespace CoinTicker
             this.ClientSize = new System.Drawing.Size(190, 24);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Arial", 9F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -170,6 +170,7 @@ namespace CoinTicker
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MainForm";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseDown);
