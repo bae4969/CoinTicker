@@ -236,17 +236,24 @@ namespace CoinTicker
 
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
+            {
                 leftMenu.Show(Cursor.Position);
+                menuHider.Start();
+            }
             else
                 leftMenu.Hide();
+        }
+        private void menuHider_Tick(object sender, EventArgs e)
+        {
+            leftMenu.Hide();
+            menuHider.Stop();
         }
         private void leftMenuAddCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             addCoin((string)leftMenuAddCombo.SelectedItem);
             leftMenu.Hide();
         }
-
         private void leftMenuRemoveCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeCoin((string)leftMenuRemoveCombo.SelectedItem);
@@ -301,7 +308,6 @@ namespace CoinTicker
         {
             isClick = false;
         }
-
     }
 
     public class Ticker

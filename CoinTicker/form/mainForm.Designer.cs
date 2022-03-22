@@ -35,21 +35,23 @@ namespace CoinTicker
             this.updater = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.leftMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chartStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftMenuChartCombo = new System.Windows.Forms.ToolStripComboBox();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftMenuAddCombo = new System.Windows.Forms.ToolStripComboBox();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftMenuRemoveCombo = new System.Windows.Forms.ToolStripComboBox();
-            this.chartStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.leftMenuChartCombo = new System.Windows.Forms.ToolStripComboBox();
             this.opacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftMenuOpacityCombo = new System.Windows.Forms.ToolStripComboBox();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.menuHider = new System.Windows.Forms.Timer(this.components);
             this.leftMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // updater
             // 
+            this.updater.Interval = 500;
             this.updater.Tick += new System.EventHandler(this.updater_Tick);
             // 
             // groupBox1
@@ -72,6 +74,24 @@ namespace CoinTicker
             this.closeToolStripMenuItem});
             this.leftMenu.Name = "leftMenu";
             this.leftMenu.Size = new System.Drawing.Size(157, 114);
+            // 
+            // chartStripMenuItem
+            // 
+            this.chartStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leftMenuChartCombo});
+            this.chartStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
+            this.chartStripMenuItem.Name = "chartStripMenuItem";
+            this.chartStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.chartStripMenuItem.Text = "Show Chart";
+            // 
+            // leftMenuChartCombo
+            // 
+            this.leftMenuChartCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.leftMenuChartCombo.Font = new System.Drawing.Font("Arial", 9F);
+            this.leftMenuChartCombo.Name = "leftMenuChartCombo";
+            this.leftMenuChartCombo.Size = new System.Drawing.Size(75, 23);
+            this.leftMenuChartCombo.Sorted = true;
+            this.leftMenuChartCombo.SelectedIndexChanged += new System.EventHandler(this.leftMenuChartCombo_SelectedIndexChanged);
             // 
             // addToolStripMenuItem
             // 
@@ -110,24 +130,6 @@ namespace CoinTicker
             this.leftMenuRemoveCombo.Size = new System.Drawing.Size(75, 23);
             this.leftMenuRemoveCombo.Sorted = true;
             this.leftMenuRemoveCombo.SelectedIndexChanged += new System.EventHandler(this.leftMenuRemoveCombo_SelectedIndexChanged);
-            // 
-            // chartStripMenuItem
-            // 
-            this.chartStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.leftMenuChartCombo});
-            this.chartStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
-            this.chartStripMenuItem.Name = "chartStripMenuItem";
-            this.chartStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.chartStripMenuItem.Text = "Show Chart";
-            // 
-            // leftMenuChartCombo
-            // 
-            this.leftMenuChartCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.leftMenuChartCombo.Font = new System.Drawing.Font("Arial", 9F);
-            this.leftMenuChartCombo.Name = "leftMenuChartCombo";
-            this.leftMenuChartCombo.Size = new System.Drawing.Size(75, 23);
-            this.leftMenuChartCombo.Sorted = true;
-            this.leftMenuChartCombo.SelectedIndexChanged += new System.EventHandler(this.leftMenuChartCombo_SelectedIndexChanged);
             // 
             // opacityToolStripMenuItem
             // 
@@ -174,6 +176,11 @@ namespace CoinTicker
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
+            // menuHider
+            // 
+            this.menuHider.Interval = 5000;
+            this.menuHider.Tick += new System.EventHandler(this.menuHider_Tick);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -217,5 +224,6 @@ namespace CoinTicker
         private ToolStripComboBox leftMenuOpacityCombo;
         private ToolStripMenuItem chartStripMenuItem;
         private ToolStripComboBox leftMenuChartCombo;
+        private Timer menuHider;
     }
 }
