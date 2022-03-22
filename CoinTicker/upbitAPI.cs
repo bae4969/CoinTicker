@@ -5,6 +5,26 @@ using System.Collections.Generic;
 
 namespace UpbitDealer.src
 {
+    public class Ticker
+    {
+        public string name;
+        public string open = "";
+        public string close = "";
+        public string max = "";
+        public string min = "";
+        public string volume = "";
+        public string prePrice = "";
+        public string accTotal = "";
+        public string accVolume = "";
+        public string change = "";
+        public string changeRate = "";
+
+        public Ticker(string name)
+        {
+            this.name = name;
+        }
+    }
+
     static class ac
     {
         public static string BASE_URL = "https://api.upbit.com/v1/";
