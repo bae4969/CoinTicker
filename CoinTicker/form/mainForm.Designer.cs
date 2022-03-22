@@ -39,6 +39,8 @@ namespace CoinTicker
             this.leftMenuAddCombo = new System.Windows.Forms.ToolStripComboBox();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftMenuRemoveCombo = new System.Windows.Forms.ToolStripComboBox();
+            this.chartStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftMenuChartCombo = new System.Windows.Forms.ToolStripComboBox();
             this.opacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftMenuOpacityCombo = new System.Windows.Forms.ToolStripComboBox();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,12 +65,13 @@ namespace CoinTicker
             // leftMenu
             // 
             this.leftMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chartStripMenuItem,
             this.addToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.opacityToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.leftMenu.Name = "leftMenu";
-            this.leftMenu.Size = new System.Drawing.Size(121, 92);
+            this.leftMenu.Size = new System.Drawing.Size(157, 114);
             // 
             // addToolStripMenuItem
             // 
@@ -76,8 +79,8 @@ namespace CoinTicker
             this.leftMenuAddCombo});
             this.addToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.addToolStripMenuItem.Text = "Add Ticker";
             // 
             // leftMenuAddCombo
             // 
@@ -94,8 +97,8 @@ namespace CoinTicker
             this.leftMenuRemoveCombo});
             this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.deleteToolStripMenuItem.Text = "Remove";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.deleteToolStripMenuItem.Text = "Remove Ticker";
             // 
             // leftMenuRemoveCombo
             // 
@@ -108,13 +111,31 @@ namespace CoinTicker
             this.leftMenuRemoveCombo.Sorted = true;
             this.leftMenuRemoveCombo.SelectedIndexChanged += new System.EventHandler(this.leftMenuRemoveCombo_SelectedIndexChanged);
             // 
+            // chartStripMenuItem
+            // 
+            this.chartStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leftMenuChartCombo});
+            this.chartStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
+            this.chartStripMenuItem.Name = "chartStripMenuItem";
+            this.chartStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.chartStripMenuItem.Text = "Show Chart";
+            // 
+            // leftMenuChartCombo
+            // 
+            this.leftMenuChartCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.leftMenuChartCombo.Font = new System.Drawing.Font("Arial", 9F);
+            this.leftMenuChartCombo.Name = "leftMenuChartCombo";
+            this.leftMenuChartCombo.Size = new System.Drawing.Size(75, 23);
+            this.leftMenuChartCombo.Sorted = true;
+            this.leftMenuChartCombo.SelectedIndexChanged += new System.EventHandler(this.leftMenuChartCombo_SelectedIndexChanged);
+            // 
             // opacityToolStripMenuItem
             // 
             this.opacityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.leftMenuOpacityCombo});
             this.opacityToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.opacityToolStripMenuItem.Name = "opacityToolStripMenuItem";
-            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.opacityToolStripMenuItem.Text = "Opacity";
             // 
             // leftMenuOpacityCombo
@@ -141,7 +162,7 @@ namespace CoinTicker
             // 
             this.closeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -173,6 +194,7 @@ namespace CoinTicker
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mainForm_MouseUp);
@@ -193,5 +215,7 @@ namespace CoinTicker
         private NotifyIcon notifyIcon;
         private ToolStripMenuItem opacityToolStripMenuItem;
         private ToolStripComboBox leftMenuOpacityCombo;
+        private ToolStripMenuItem chartStripMenuItem;
+        private ToolStripComboBox leftMenuChartCombo;
     }
 }

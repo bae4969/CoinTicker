@@ -49,6 +49,7 @@ namespace CoinTicker
                     {
                         totalNameList.Add(coinName[1]);
                         leftMenuAddCombo.Items.Add(coinName[1]);
+                        leftMenuChartCombo.Items.Add(coinName[1]);
                     }
             }
             totalNameList.Sort();
@@ -72,6 +73,10 @@ namespace CoinTicker
                 tickerUpdater.Start();
                 updater.Start();
             }
+        }
+        private void mainForm_Shown(object sender, EventArgs e)
+        {
+            rearrangement();
         }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -140,24 +145,35 @@ namespace CoinTicker
 
         private void rearrangement()
         {
-            Size = new Size(192, updateNameList.Count * 26 + 18);
-            Point nextLoc = Location;
-            if (nextLoc.X + Size.Width > Screen.PrimaryScreen.WorkingArea.Size.Width)
-                nextLoc.X = Screen.PrimaryScreen.WorkingArea.Size.Width - Size.Width;
-            else if (nextLoc.X < 0)
-                nextLoc.X = 0;
-            if (nextLoc.Y + Size.Height > Screen.PrimaryScreen.WorkingArea.Size.Height)
-                nextLoc.Y = Screen.PrimaryScreen.WorkingArea.Size.Height - Size.Height;
-            else if (nextLoc.Y < 0)
-                nextLoc.Y = 0;
-            Location = nextLoc;
-
-            groupBox1.Location = new Point(0, updateNameList.Count * 26 + 16);
-            for (int i = 0; i < updateNameList.Count; i++)
+            if (updateNameList.Count == 0)
             {
-                int y = i * 26 + 12;
-                textName[i].Location = new Point(12, y);
-                textValue[i].Location = new Point(78, y);
+                Visible = false;
+                ShowIcon = false;
+            }
+            else
+            {
+                Visible = true;
+                ShowIcon = true;
+
+                Size = new Size(192, updateNameList.Count * 26 + 18);
+                Point nextLoc = Location;
+                if (nextLoc.X + Size.Width > Screen.PrimaryScreen.WorkingArea.Size.Width)
+                    nextLoc.X = Screen.PrimaryScreen.WorkingArea.Size.Width - Size.Width;
+                else if (nextLoc.X < 0)
+                    nextLoc.X = 0;
+                if (nextLoc.Y + Size.Height > Screen.PrimaryScreen.WorkingArea.Size.Height)
+                    nextLoc.Y = Screen.PrimaryScreen.WorkingArea.Size.Height - Size.Height;
+                else if (nextLoc.Y < 0)
+                    nextLoc.Y = 0;
+                Location = nextLoc;
+
+                groupBox1.Location = new Point(0, updateNameList.Count * 26 + 16);
+                for (int i = 0; i < updateNameList.Count; i++)
+                {
+                    int y = i * 26 + 12;
+                    textName[i].Location = new Point(12, y);
+                    textValue[i].Location = new Point(78, y);
+                }
             }
         }
         private void addCoin(string coinName)
@@ -236,6 +252,12 @@ namespace CoinTicker
             removeCoin((string)leftMenuRemoveCombo.SelectedItem);
             leftMenu.Hide();
         }
+        private void leftMenuChartCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            graph graph = new graph((string)leftMenuChartCombo.SelectedItem);
+            graph.Show();
+            leftMenu.Hide();
+        }
         private void leftMenuOpacityCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             Opacity = double.Parse((string)leftMenuOpacityCombo.SelectedItem) / 100.0;
@@ -279,6 +301,7 @@ namespace CoinTicker
         {
             isClick = false;
         }
+
     }
 
     public class Ticker
