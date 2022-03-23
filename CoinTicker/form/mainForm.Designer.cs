@@ -45,7 +45,6 @@ namespace CoinTicker
             this.leftMenuOpacityCombo = new System.Windows.Forms.ToolStripComboBox();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.menuHider = new System.Windows.Forms.Timer(this.components);
             this.leftMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +72,7 @@ namespace CoinTicker
             this.opacityToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.leftMenu.Name = "leftMenu";
-            this.leftMenu.Size = new System.Drawing.Size(157, 114);
+            this.leftMenu.Size = new System.Drawing.Size(181, 136);
             // 
             // chartStripMenuItem
             // 
@@ -81,7 +80,7 @@ namespace CoinTicker
             this.leftMenuChartCombo});
             this.chartStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.chartStripMenuItem.Name = "chartStripMenuItem";
-            this.chartStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.chartStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.chartStripMenuItem.Text = "Show Chart";
             // 
             // leftMenuChartCombo
@@ -99,7 +98,7 @@ namespace CoinTicker
             this.leftMenuAddCombo});
             this.addToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add Ticker";
             // 
             // leftMenuAddCombo
@@ -117,7 +116,7 @@ namespace CoinTicker
             this.leftMenuRemoveCombo});
             this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Remove Ticker";
             // 
             // leftMenuRemoveCombo
@@ -137,7 +136,7 @@ namespace CoinTicker
             this.leftMenuOpacityCombo});
             this.opacityToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.opacityToolStripMenuItem.Name = "opacityToolStripMenuItem";
-            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.opacityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.opacityToolStripMenuItem.Text = "Opacity";
             // 
             // leftMenuOpacityCombo
@@ -164,7 +163,7 @@ namespace CoinTicker
             // 
             this.closeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F);
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -175,11 +174,6 @@ namespace CoinTicker
             this.notifyIcon.Text = "Coin Ticker";
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
-            // 
-            // menuHider
-            // 
-            this.menuHider.Interval = 5000;
-            this.menuHider.Tick += new System.EventHandler(this.menuHider_Tick);
             // 
             // mainForm
             // 
@@ -224,6 +218,5 @@ namespace CoinTicker
         private ToolStripComboBox leftMenuOpacityCombo;
         private ToolStripMenuItem chartStripMenuItem;
         private ToolStripComboBox leftMenuChartCombo;
-        private Timer menuHider;
     }
 }

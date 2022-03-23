@@ -237,37 +237,37 @@ namespace CoinTicker
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-            {
                 leftMenu.Show(Cursor.Position);
-                menuHider.Start();
-            }
             else
                 leftMenu.Hide();
         }
-        private void menuHider_Tick(object sender, EventArgs e)
+        private void leftMenuChartCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (leftMenuChartCombo.SelectedIndex < 0) return;
+            graph graph = new graph((string)leftMenuChartCombo.SelectedItem);
+            graph.Show();
+            leftMenuChartCombo.SelectedIndex = -1;
             leftMenu.Hide();
-            menuHider.Stop();
         }
         private void leftMenuAddCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (leftMenuAddCombo.SelectedIndex < 0) return;
             addCoin((string)leftMenuAddCombo.SelectedItem);
+            leftMenuAddCombo.SelectedIndex = -1;
             leftMenu.Hide();
         }
         private void leftMenuRemoveCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (leftMenuRemoveCombo.SelectedIndex < 0) return;
             removeCoin((string)leftMenuRemoveCombo.SelectedItem);
-            leftMenu.Hide();
-        }
-        private void leftMenuChartCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            graph graph = new graph((string)leftMenuChartCombo.SelectedItem);
-            graph.Show();
+            leftMenuRemoveCombo.SelectedIndex = -1;
             leftMenu.Hide();
         }
         private void leftMenuOpacityCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (leftMenuOpacityCombo.SelectedIndex < 0) return;
             Opacity = double.Parse((string)leftMenuOpacityCombo.SelectedItem) / 100.0;
+            leftMenuOpacityCombo.SelectedIndex = -1;
             leftMenu.Hide();
         }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

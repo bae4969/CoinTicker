@@ -87,6 +87,7 @@ namespace CoinTicker
             {
                 updateThread = new Thread(executeUpdate);
                 updateThread.Start();
+                timer_update.Start();
 
                 isInit = true;
             }

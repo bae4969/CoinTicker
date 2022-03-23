@@ -142,7 +142,7 @@ namespace CoinTicker
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Color = System.Drawing.Color.Green;
-            series2.Font = new System.Drawing.Font("Arial Narrow", 8.25F);
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             series2.IsVisibleInLegend = false;
             series2.Legend = "Legend1";
             series2.Name = "top";
@@ -161,7 +161,7 @@ namespace CoinTicker
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Color = System.Drawing.Color.Green;
-            series4.Font = new System.Drawing.Font("Arial Narrow", 8.25F);
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             series4.IsVisibleInLegend = false;
             series4.Legend = "Legend1";
             series4.Name = "bot";
@@ -224,7 +224,6 @@ namespace CoinTicker
             // 
             // timer_update
             // 
-            this.timer_update.Enabled = true;
             this.timer_update.Interval = 1000;
             this.timer_update.Tick += new System.EventHandler(this.timer_update_Tick);
             // 
