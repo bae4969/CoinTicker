@@ -244,31 +244,31 @@ namespace CoinTicker
         private void leftMenuChartCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (leftMenuChartCombo.SelectedIndex < 0) return;
+            leftMenu.Hide();
             graph graph = new graph((string)leftMenuChartCombo.SelectedItem);
             graph.Show();
             leftMenuChartCombo.SelectedIndex = -1;
-            leftMenu.Hide();
         }
         private void leftMenuAddCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (leftMenuAddCombo.SelectedIndex < 0) return;
+            leftMenu.Hide();
             addCoin((string)leftMenuAddCombo.SelectedItem);
             leftMenuAddCombo.SelectedIndex = -1;
-            leftMenu.Hide();
         }
         private void leftMenuRemoveCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (leftMenuRemoveCombo.SelectedIndex < 0) return;
+            leftMenu.Hide();
             removeCoin((string)leftMenuRemoveCombo.SelectedItem);
             leftMenuRemoveCombo.SelectedIndex = -1;
-            leftMenu.Hide();
         }
         private void leftMenuOpacityCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (leftMenuOpacityCombo.SelectedIndex < 0) return;
+            leftMenu.Hide();
             Opacity = double.Parse((string)leftMenuOpacityCombo.SelectedItem) / 100.0;
             leftMenuOpacityCombo.SelectedIndex = -1;
-            leftMenu.Hide();
         }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
